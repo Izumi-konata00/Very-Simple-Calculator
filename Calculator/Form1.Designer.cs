@@ -58,6 +58,8 @@ namespace Kalkulator
             this.memoryPlus = new System.Windows.Forms.Button();
             this.memoryMinus = new System.Windows.Forms.Button();
             this.memoryDsiplay = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Screen
@@ -67,7 +69,7 @@ namespace Kalkulator
             this.Screen.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Screen.Location = new System.Drawing.Point(0, 0);
             this.Screen.Name = "Screen";
-            this.Screen.Size = new System.Drawing.Size(341, 111);
+            this.Screen.Size = new System.Drawing.Size(351, 111);
             this.Screen.TabIndex = 0;
             this.Screen.Text = "0";
             this.Screen.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -227,10 +229,13 @@ namespace Kalkulator
             // 
             // equals
             // 
+            this.equals.Dock = System.Windows.Forms.DockStyle.Right;
+            this.equals.FlatAppearance.BorderSize = 0;
+            this.equals.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.equals.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.equals.Location = new System.Drawing.Point(255, 437);
+            this.equals.Location = new System.Drawing.Point(235, 0);
             this.equals.Name = "equals";
-            this.equals.Size = new System.Drawing.Size(75, 30);
+            this.equals.Size = new System.Drawing.Size(116, 53);
             this.equals.TabIndex = 15;
             this.equals.Text = "=";
             this.equals.UseVisualStyleBackColor = true;
@@ -315,10 +320,13 @@ namespace Kalkulator
             // 
             // buttonDot
             // 
+            this.buttonDot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonDot.FlatAppearance.BorderSize = 0;
+            this.buttonDot.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDot.Location = new System.Drawing.Point(174, 437);
+            this.buttonDot.Location = new System.Drawing.Point(0, 0);
             this.buttonDot.Name = "buttonDot";
-            this.buttonDot.Size = new System.Drawing.Size(75, 30);
+            this.buttonDot.Size = new System.Drawing.Size(235, 53);
             this.buttonDot.TabIndex = 23;
             this.buttonDot.Text = ",";
             this.buttonDot.UseVisualStyleBackColor = true;
@@ -379,17 +387,26 @@ namespace Kalkulator
             this.memoryDsiplay.UseVisualStyleBackColor = true;
             this.memoryDsiplay.Click += new System.EventHandler(this.memoryDsiplay_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.buttonDot);
+            this.panel1.Controls.Add(this.equals);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 462);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(351, 53);
+            this.panel1.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 480);
+            this.ClientSize = new System.Drawing.Size(351, 515);
             this.Controls.Add(this.memoryDsiplay);
             this.Controls.Add(this.memoryMinus);
             this.Controls.Add(this.memoryPlus);
             this.Controls.Add(this.memoryReset);
             this.Controls.Add(this.memorySet);
-            this.Controls.Add(this.buttonDot);
             this.Controls.Add(this.buttonClearLast);
             this.Controls.Add(this.buttonRightBracket);
             this.Controls.Add(this.buttonLeftBracket);
@@ -397,7 +414,6 @@ namespace Kalkulator
             this.Controls.Add(this.powerButton);
             this.Controls.Add(this.factorial);
             this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.equals);
             this.Controls.Add(this.button_div);
             this.Controls.Add(this.button_times);
             this.Controls.Add(this.button_minus);
@@ -413,10 +429,13 @@ namespace Kalkulator
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Screen);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Kalkulator";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -452,6 +471,7 @@ namespace Kalkulator
         private System.Windows.Forms.Button memoryPlus;
         private System.Windows.Forms.Button memoryMinus;
         private System.Windows.Forms.Button memoryDsiplay;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
