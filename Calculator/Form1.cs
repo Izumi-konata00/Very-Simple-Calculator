@@ -88,7 +88,7 @@ namespace Kalkulator
                         output += " " + s1.Peek();
                         s1.Pop();
                     }
-                    s1.Pop();    //Usuwamy nawias "(" ze stosu
+                    s1.Pop();
                 }
                 else if (Char.IsDigit(input[i - 1]) && input[i] == ',')
                 {
@@ -114,7 +114,7 @@ namespace Kalkulator
             double sol=0;
             NumberFormatInfo provider = new NumberFormatInfo();
             provider.NumberDecimalSeparator = ",";
-            double aa = System.Convert.ToDouble(a,provider);   //stoi() zamienia string na integer
+            double aa = System.Convert.ToDouble(a,provider);
             double bb=0;
             if (operation != '~')
                 bb = System.Convert.ToDouble(b,provider);
