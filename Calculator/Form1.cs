@@ -38,16 +38,14 @@ namespace Kalkulator
                 con.Enabled = false;
             }
         }
-        private void DivisionbyZero()
-        {
-            Screen.Text = "Division by Zero!";
-            DisableControls(this);
-        }
-
         private void button_Click(object sender, EventArgs e)
         {
             Button bt = sender as Button;
             char ch = Screen.Text[Screen.Text.Length - 1];
+            if (bt.Text[0] == ')' && leftbrackets == 0)
+            {
+                return;
+            }
             if (Screen.Text == "0" && !ONP.isOperator(bt.Text[0]))
             {
                 Screen.Text = "";
@@ -98,8 +96,11 @@ namespace Kalkulator
             result = ONP.calculate(output);
             if (result != "")
             {
+                if (result == "Division By Zero!")
+                    DisableControls(this);
+                leftbrackets = 0;
+                rightbrackets = 0;
                 Screen.Text = result;
-                clearScreen = true;
             }
         }
         private void clearButton_Click(object sender, EventArgs e)
